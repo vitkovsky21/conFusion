@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Dish } from './shared/dish';
 
 @Component({
   selector: 'app-root',
