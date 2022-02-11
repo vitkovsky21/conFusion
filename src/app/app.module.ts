@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
+import { DishService } from './services/dish.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
     MatGridListModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [DishService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
