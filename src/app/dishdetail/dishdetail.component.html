@@ -31,13 +31,17 @@
     <div fxFlex *ngIf="dish">
         <mat-card-title>
             <h3>Comments</h3>
-          </mat-card-title>
+        </mat-card-title>
         <mat-card *ngFor="let comment of comments">
-          <mat-list>
-              <mat-list-item>{{ comment.comment }}</mat-list-item>
-              <mat-list-item>{{ comment.rating }} stars</mat-list-item>
-              <mat-list-item>-- {{ comment.author }} {{ comment.date | date: "mediumDate" }}</mat-list-item>
-          </mat-list>
+          <mat-card-content>
+            <mat-list>
+              <mat-list-item>
+                <p>{{ comment.comment }}<br>
+                {{ comment.rating }} stars<br>
+                -- {{ comment.author }} {{ comment.date | date: "mediumDate" }}</p>
+              </mat-list-item>
+            </mat-list>
+          </mat-card-content>
         </mat-card>
       </div>
   </div>
