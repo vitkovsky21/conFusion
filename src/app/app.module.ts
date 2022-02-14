@@ -20,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { LeaderService } from './services/leader.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { ContactComponent } from './contact/contact.component';
     MatGridListModule,
     FlexLayoutModule
   ],
-  providers: [DishService],
+  providers: [DishService, LeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
