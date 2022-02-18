@@ -40,6 +40,8 @@ export class DishdetailComponent implements OnInit {
   d = new Date();
   textDate = this.d.toISOString();
 
+  errMess!: string;
+
   formErrors: any =  {
     'author': '',
     'comment': ''
@@ -64,7 +66,7 @@ export class DishdetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dishService.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
+    this.dishService.getDishIds().subscribe(dishIds => this.dishIds = dishIds, errmess => this.errMess = <any>errmess);
     this.route.params.pipe(switchMap((params: Params) => this.dishService.getDish(params['id'])))
     .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); });
   }
