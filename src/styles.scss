@@ -53,3 +53,10 @@ flex: 1 1 auto;
   padding: 0 44px;
   max-width: 100%;
 }
+
+.highlight {
+  background-color: $background-pale;
+  border: 1px solid $primary-color-dark;
+  z-index: 1;
+  transform: scale(1.01);
+}
