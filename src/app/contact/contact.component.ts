@@ -18,6 +18,12 @@ export class ContactComponent implements OnInit {
   contactType = ContactType;
   feedbackCopy!: Feedback;
 
+  // onSubmit() toggling
+  toggler = false;
+  afterSubmit = false;
+
+
+
   formErrors: any = {
     'firstname': '',
     'lastname': '',
@@ -55,6 +61,10 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
 
+  reverseToggler() {
+    this.toggler = true;
+  }
+
   createForm(): void {
     this.feedbackForm = this.fb.group({
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)] ],
@@ -73,6 +83,13 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit() {
+
+    this.toggler = true;
+    setTimeout(() => {
+      this.toggler = false;
+    }, 5000);
+    this.afterSubmit = true;
+
     this.feedback = this.feedbackForm!.value;
     console.log(this.feedback);
     this.feedbackForm.reset({
